@@ -58,16 +58,12 @@ spec:
               value: {{.Values.solrTarballUrl}}
             - name: SOLR_HOME
               value: /data
-            - name: SOLR_JAVA_MEM
-              value: -Xms24g -Xmx24g
-            - name: JAVA_OPTS
-              value: --add-modules jdk.incubator.vector
           ports:
             - containerPort: 8983
           resources:
             requests:
-              memory: 18Gi
+              memory: 100Mi
             limits:
-              memory: 38Gi
+              memory: 16Gi
   serviceName: {{ .Release.Name }}-solr
 

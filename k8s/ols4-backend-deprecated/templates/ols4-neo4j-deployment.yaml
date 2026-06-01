@@ -33,18 +33,16 @@ spec:
           args: ["rm -rf /data/* && NEO4J_TARBALL_URL={{ .Values.neo4jTarballUrl }} && wget -qO- $NEO4J_TARBALL_URL | tar -xz -C /data/ && tini -g -- /startup/docker-entrypoint.sh neo4j"]
           resources:
             requests:
-              memory: 100Mi
+              memory: 2Gi
             limits:
               memory: 20Gi
           env:
+            #- name: NEO4J_HEAP_MEMORY
+            #  value: 10g
+            #- name: NEO4J_dbms_memory_heap_maxSize
+            #  value: 8g
             - name: NEO4J_AUTH
               value: none
-            - name: JAVA_OPTS
-              value: --add-modules jdk.incubator.vector
-            - name: NEO4J_server_memory_heap_initial__size
-              value: 15000m
-            - name: NEO4J_server_memory_heap_max__size
-              value: 15000m
           ports:
             - containerPort: 7474
             - containerPort: 7687

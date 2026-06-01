@@ -1,19 +1,17 @@
 apiVersion: v1
-kind: Service
+kind: PersistentVolumeClaim
 metadata:
-  name: {{ .Release.Name }}-solr
+  name: {{ .Release.Name }}-solr-pvc
   labels:
-    app: {{ .Release.Name }}-solr
     project: zbmed
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/part-of: {{ .Values.partOfLabel }}
     app.kubernetes.io/component: backend
     app.kubernetes.io/managed-by: Helm
 spec:
-  ports:
-      - port: 8983
-        targetPort: 8983
-        name: http
-        protocol: TCP
-  selector:
-    app: {{ .Release.Name }}-solr
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Gi # 30Gi for BERD, 50Gi for HEALTH
+

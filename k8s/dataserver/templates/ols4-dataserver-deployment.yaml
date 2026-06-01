@@ -13,6 +13,11 @@ spec:
     metadata:
       labels:
         app: {{ .Release.Name }}
+        project: zbmed
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        app.kubernetes.io/part-of: {{ .Values.partOfLabel }}
+        app.kubernetes.io/component: backend
+        app.kubernetes.io/managed-by: Helm
     spec:
       containers:
         - name: dataserver
@@ -24,9 +29,10 @@ spec:
               mountPath: "/usr/share/nginx/html"
           resources:
             requests:
-              memory: 4Gi
+              memory: 256Mi
+              cpu: 0.5m
             limits:
-              memory: 4Gi
+              memory: 1Gi
       volumes:
       - name: {{.Release.Name}}-data
         persistentVolumeClaim:

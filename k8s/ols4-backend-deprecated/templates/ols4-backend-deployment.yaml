@@ -39,6 +39,8 @@ spec:
                 secretKeyRef:
                   key: MATOMO_AUTH_TOKEN
                   name: ols4-backend-auth-token
+            - name: JAVA_OPTIONS
+              value: -Xmx6G
           resources:
             requests:
               memory: 100Mi
