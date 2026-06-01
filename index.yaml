@@ -3,6 +3,15 @@ entries:
   ols4-backend:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2026-06-01T06:58:18.973025627Z"
+    description: A Helm chart to deploy the ols4 backend
+    digest: 8a556f5ed44d9512c90a400e0685ecc4b5dafa0d56c7c57e0fe2d0b0aa117f17
+    name: ols4-backend
+    urls:
+    - https://github.com/zbmed/ols4-backend-deployment/releases/download/ols4-backend-0.1.9/ols4-backend-0.1.9.tgz
+    version: 0.1.9
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-12-13T14:42:52.744410454Z"
     description: A Helm chart to deploy the ols4 backend
     digest: e63ec0252015f017ce12ae39d0c763aa9f13a52b46ca35a32571b6e5781f767d
@@ -40,6 +49,15 @@ entries:
   ols4-backend-deprecated:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2026-06-01T06:58:19.152976953Z"
+    description: A Helm chart to deploy the ols4 backend
+    digest: 98889a5cc8997bae7636c7d0077d4419dc20323e59a96e8ef5ebcc7afcc52515
+    name: ols4-backend-deprecated
+    urls:
+    - https://github.com/zbmed/ols4-backend-deployment/releases/download/ols4-backend-deprecated-0.1.9/ols4-backend-deprecated-0.1.9.tgz
+    version: 0.1.9
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2026-06-01T06:57:09.795896019Z"
     description: A Helm chart to deploy the ols4 backend
     digest: 4abd8e77d945579d22828d863979118c157d93e8406c20942bd8942712636d75
@@ -48,6 +66,15 @@ entries:
     - https://github.com/zbmed/ols4-backend-deployment/releases/download/ols4-backend-deprecated-0.1.8/ols4-backend-deprecated-0.1.8.tgz
     version: 0.1.8
   ols4-dataserver:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-06-01T06:58:19.454167823Z"
+    description: A Helm chart to deploy the ols4 dataserver
+    digest: cfc11cb3c91df936672f21e3c7d26e22d75e8a627fda5457a2db29c370d9f5e3
+    name: ols4-dataserver
+    urls:
+    - https://github.com/zbmed/ols4-backend-deployment/releases/download/ols4-dataserver-0.1.5/ols4-dataserver-0.1.5.tgz
+    version: 0.1.5
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2024-12-13T14:42:52.946120165Z"
@@ -75,4 +102,4 @@ entries:
     urls:
     - https://github.com/ts4nfdi/ols4-backend-deployment/releases/download/ols4-dataserver-0.1.2/ols4-dataserver-0.1.2.tgz
     version: 0.1.2
-generated: "2026-06-01T06:57:09.953995112Z"
+generated: "2026-06-01T06:58:19.454202745Z"
