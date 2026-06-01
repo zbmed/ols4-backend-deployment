@@ -37,6 +37,16 @@ entries:
     urls:
     - https://github.com/ts4nfdi/ols4-backend-deployment/releases/download/ols4-backend-0.1.5/ols4-backend-0.1.5.tgz
     version: 0.1.5
+  ols4-backend-deprecated:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-06-01T06:57:09.795896019Z"
+    description: A Helm chart to deploy the ols4 backend
+    digest: 4abd8e77d945579d22828d863979118c157d93e8406c20942bd8942712636d75
+    name: ols4-backend-deprecated
+    urls:
+    - https://github.com/zbmed/ols4-backend-deployment/releases/download/ols4-backend-deprecated-0.1.8/ols4-backend-deprecated-0.1.8.tgz
+    version: 0.1.8
   ols4-dataserver:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -65,4 +75,4 @@ entries:
     urls:
     - https://github.com/ts4nfdi/ols4-backend-deployment/releases/download/ols4-dataserver-0.1.2/ols4-dataserver-0.1.2.tgz
     version: 0.1.2
-generated: "2024-12-13T14:42:52.946147316Z"
+generated: "2026-06-01T06:57:09.953995112Z"
