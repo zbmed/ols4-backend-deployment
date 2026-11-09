@@ -60,7 +60,9 @@ In the config.json set the absolute path for a local terminology:
 "ontology_purl": "file:///home/user/ts/ols4/dataload/terminologies/health/maelstrom.owl"
 ```
 ```
-export OLS4_CONFIG=dataload/configs/all-health-configs-may26.json
+export OLS4_CONFIG=dataload/configs/mathmoddb.json
+export OLS4_DATALOAD_IMAGE="ghcr.io/ebispot/ols4-dataload:957c2069552b199e6d2c7d9b0d06e1dedc70840b"
+export OLS4_EMBED_IMAGE="ghcr.io/ebispot/ols4-embed:821296d41d50e75a7fac6725a908cbb6144a13a5"
 rm nohup.out
 rm -r out
 rm -r tmp
@@ -85,12 +87,12 @@ Result data is in `/var/lib/docker/volumes.`
 
 - copy to the cluster:
 ```
-TNAME="health-may26"
-DATASERVER="zbmed-ts-health-ols4-dataserver-69644dbfdb-6hzwt"
-NEO4J="/home/sasse/ts/ols4/tmp/work/b5/d1ab22ec2580db2655fc5c6f312d65/neo4j.tgz"
-SOLR="/home/sasse/ts/ols4/tmp/work/aa/cf740c2a3230bbdf5c050d86deba3b/solr.tgz"
-kubectl cp ${NEO4J} ${DATASERVER}:/usr/share/nginx/html/${TNAME}_neo4j.tgz -n zbmed-ts-health
-kubectl cp ${SOLR} ${DATASERVER}:/usr/share/nginx/html/${TNAME}_solr.tgz -n zbmed-ts-health
+TNAME="mathmoddb"
+DATASERVER="ts-ols4-dataserver-75496bd5b-mhffj"
+NEO4J="/home/user/ts/ols4/tmp/work/84/e04b29ecf1eeac8442c3109baa268b/neo4j.tgz"
+SOLR="/home/user/ts/ols4/tmp/work/e8/427fcc5a61e6f26f9d849b37f90b14/solr.tgz"
+kubectl cp ${NEO4J} ${DATASERVER}:/usr/share/nginx/html/${TNAME}_neo4j.tgz -n ts
+kubectl cp ${SOLR} ${DATASERVER}:/usr/share/nginx/html/${TNAME}_solr.tgz -n ts
 ```
 
 

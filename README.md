@@ -4,7 +4,7 @@
 
 ### Secrets
 ```
-kubectl -n zbmed-ts-health create secret generic ols4-backend-auth-token --from-literal=MATOMO_AUTH_TOKEN={have a look into the keypass-database}
+kubectl -n ts create secret generic ols4-backend-auth-token --from-literal=MATOMO_AUTH_TOKEN={have a look into the keypass-database}
 ```
 
 ### QA
@@ -47,9 +47,9 @@ Add this for enabling certification on prod cluster:
 
 ### Install the dataserver and download data
 ```
-helm install zbmed-ts-health-ols4-dataserver-blue `
-    --namespace="zbmed-ts-health" `
-    --set-string partOfLabel="zbmed-ts-health" `
+helm install ts-ols4-dataserver `
+    --namespace="ts" `
+    --set-string partOfLabel="ts" `
 IdeaProjects/ols4-backend-deployment/k8s/dataserver
 ```
 
@@ -92,6 +92,23 @@ helm upgrade zbmed-ts-health-ols4-green `
 IdeaProjects/ols4-backend-deployment/k8s/ols4-backend
 ```
 
+OLS4 IMAGE (nextflow): ghcr.io/zbmed/ols4-backend:3f3def560da06322bcd0c01a88ef397c244f6219
+
+```
+helm upgrade ols4-mathmod `
+    --namespace="ts" `
+    --set-string ingress.dns="ols4-mathmod.qa.km.k8s.zbmed.de"  `
+    --set-string ingress.path="/ols"  `
+    --set-string backend.backendImage="ghcr.io/zbmed/ols4-backend:3f3def560da06322bcd0c01a88ef397c244f6219"  `
+    --set-string solrImage="ghcr.io/ebispot/ols4-solr:9.8.1"  `
+    --set-string neo4jImage="ghcr.io/ebispot/ols4-neo4j:2025.03.0-community"  `
+    --set-string backend.context="/ols"  `
+    --set-string neo4jTarballUrl="http://ts-ols4-dataserver/mathmoddb_neo4j.tgz"  `
+    --set-string solrTarballUrl="http://ts-ols4-dataserver/mathmoddb_solr.tgz"  `
+    --set-string ingress.enableSSL="true"  `
+    --set-string ingress.certIssuer="letsencrypt-prod"  `
+IdeaProjects/ols4-backend-deployment/k8s/ols4-backend
+```
 
 -------------------
 

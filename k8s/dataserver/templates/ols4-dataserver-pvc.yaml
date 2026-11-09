@@ -13,5 +13,5 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 150Gi # 10Gi for BERD, 150Gi for HEALTH
+      storage: 20Gi # 10Gi for BERD, 150Gi for HEALTH
 
